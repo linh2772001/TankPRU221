@@ -31,7 +31,7 @@ public class TankController : intruct
             Direction = Direction.Down,
             Hp = 10,
             Point = 0,
-            Position = new Vector3(0, 0, 0),
+            Position = new Vector3(3f, -3f, 0),
             Guid = GUID.Generate()
         };
         gameObject.transform.position = _tank.Position;
