@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8693ce4a22ab2046a76943cfd70f0fe
+guid: 8f6d6a175d9f2494fb9a4f5f65b5b342
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -147,7 +147,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall_brick1_1: 2131306072
       wall_brick1_0: -1260582071
   spritePackingTag: 
   pSDRemoveMatte: 0
