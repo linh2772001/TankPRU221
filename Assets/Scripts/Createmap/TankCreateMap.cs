@@ -158,7 +158,6 @@ public class TankCreateMap : intruct
                 returnSetTrigger(Rock);
                 tree.transform.SetSiblingIndex(3);
                 
-                GameStatus.isGamePaused = true;
                 saveFile.savefile = true;
             }
         }

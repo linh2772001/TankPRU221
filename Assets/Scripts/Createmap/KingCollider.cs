@@ -17,8 +17,8 @@ public class KingCollider : MonoBehaviour
             if (a == 0)
             {
                 Summary.SetActive(true);
+                intruct.GameStatus.isGameRunning = false;
                 Destroy(gameObject);
-
                 Destroy(GameObject.FindGameObjectWithTag("Player"));
             }
         }

@@ -11,6 +11,7 @@ public class intruct : MonoBehaviour
     public static class GameStatus
     {
         public static bool isGamePaused = true;
+        public static bool isGameRunning = true;
     }
 
     void Start()

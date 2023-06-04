@@ -49,50 +49,53 @@ public class TankController : intruct
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (GameStatus.isGameRunning)
         {
-            Move(Direction.Left);
-            animator.SetFloat("moveLeft", 1);
-            animator.SetFloat("moveRight", 0);
-            animator.SetFloat("moveUp", 0);
-            animator.SetFloat("moveDown", 0);
-        }
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            Move(Direction.Down);
-            animator.SetFloat("moveLeft", 0);
-            animator.SetFloat("moveRight", 0);
-            animator.SetFloat("moveUp", 0);
-            animator.SetFloat("moveDown", 1);
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            Move(Direction.Right);
-            animator.SetFloat("moveLeft", 0);
-            animator.SetFloat("moveRight", 1);
-            animator.SetFloat("moveUp", 0);
-            animator.SetFloat("moveDown", 0);
-        }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            Move(Direction.Up);
-            animator.SetFloat("moveLeft", 0);
-            animator.SetFloat("moveRight", 0);
-            animator.SetFloat("moveUp", 1);
-            animator.SetFloat("moveDown", 0);
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                Move(Direction.Left);
+                animator.SetFloat("moveLeft", 1);
+                animator.SetFloat("moveRight", 0);
+                animator.SetFloat("moveUp", 0);
+                animator.SetFloat("moveDown", 0);
+            }
+            else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                Move(Direction.Down);
+                animator.SetFloat("moveLeft", 0);
+                animator.SetFloat("moveRight", 0);
+                animator.SetFloat("moveUp", 0);
+                animator.SetFloat("moveDown", 1);
+            }
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                Move(Direction.Right);
+                animator.SetFloat("moveLeft", 0);
+                animator.SetFloat("moveRight", 1);
+                animator.SetFloat("moveUp", 0);
+                animator.SetFloat("moveDown", 0);
+            }
+            else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
+                Move(Direction.Up);
+                animator.SetFloat("moveLeft", 0);
+                animator.SetFloat("moveRight", 0);
+                animator.SetFloat("moveUp", 1);
+                animator.SetFloat("moveDown", 0);
+            }
+
+            if (GameStatus.isGamePaused)
+            {
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    Fire();
+                }
+            }
         }
         /*else
         {
             animator.enabled = false;
         }*/
-
-        if (GameStatus.isGamePaused)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                Fire();
-            }
-        }
     }
 
     private void Move(Direction direction)
@@ -129,7 +132,7 @@ public class TankController : intruct
             if (_tank.Hp == 0)
             {
                 Destroy(gameObject);
-
+                intruct.GameStatus.isGameRunning = false;
                 Summary.SetActive(true);
             }
         }
