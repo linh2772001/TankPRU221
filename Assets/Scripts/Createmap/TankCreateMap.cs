@@ -42,7 +42,7 @@ public class TankCreateMap : intruct
 
     void Update()
     {
-        if (!GameStatus.isGamePaused)       //xet game co dang puase ko, neu pause, ko the input cac keycode
+        if (!GameStatus.isGamePaused && GameStatus.isTankCreate)       //xet game co dang puase ko, neu pause, ko the input cac keycode
         {
             setTrigger(Block);
             setTrigger(Rock);
@@ -156,9 +156,11 @@ public class TankCreateMap : intruct
             {
                 returnSetTrigger(Block);
                 returnSetTrigger(Rock);
+                returnSetTrigger(water);
                 tree.transform.SetSiblingIndex(3);
                 
                 saveFile.savefile = true;
+                GameStatus.isTankCreate = false;
             }
         }
     }

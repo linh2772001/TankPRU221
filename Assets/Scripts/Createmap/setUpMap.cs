@@ -14,6 +14,7 @@ public class setUpMap : MonoBehaviour
     public static class undying
     {
         public static bool isundying = true;
+        public static bool isPlaying = true;
     }
 
     public void setUp()
@@ -31,6 +32,8 @@ public class setUpMap : MonoBehaviour
         Instantiate(enemy, new Vector3(5.12f, 3.84f, 0), Quaternion.identity);
         Instantiate(enemy, new Vector3(2.88f, 2.88f, 0), Quaternion.identity);
         a = 0;
+
+        undying.isPlaying = true;
     }
 
     private void Update()

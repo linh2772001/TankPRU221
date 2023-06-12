@@ -11,7 +11,7 @@ public class intruct : MonoBehaviour
     public static class GameStatus
     {
         public static bool isGamePaused = true;
-        public static bool isGameRunning = true;
+        public static bool isTankCreate = false;
     }
 
     void Start()
@@ -38,6 +38,7 @@ public class intruct : MonoBehaviour
             intructmenu.SetActive(false);
             Time.timeScale = 1f;
             GameStatus.isGamePaused = false;
+            GameStatus.isTankCreate = true;
         }
     }
 

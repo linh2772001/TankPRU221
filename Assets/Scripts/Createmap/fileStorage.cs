@@ -49,6 +49,7 @@ public class fileStorage : TankCreateMap
                 {
                     Vector3 positiontree = tree.transform.position; // vi tri cac object tree
                     writer.WriteLine($"{1},{positiontree.x},{positiontree.y},{positiontree.z}");    //ghi ten, vi tri x,y,z vao file
+                    Destroy(tree);
                 }
 
                 //ghi du lieu vi tri object block vao tung dong
@@ -56,6 +57,7 @@ public class fileStorage : TankCreateMap
                 {
                     Vector3 positionblock = block.transform.position; // vi tri cac object block
                     writer.WriteLine($"{2},{positionblock.x},{positionblock.y},{positionblock.z}");    //ghi ten, vi tri x,y,z vao file
+                    Destroy (block);
                 }
 
                 //ghi du lieu vi tri object rock vao tung dong
@@ -63,12 +65,14 @@ public class fileStorage : TankCreateMap
                 {
                     Vector3 positionrock = rock.transform.position; // vi tri cac object rock
                     writer.WriteLine($"{3},{positionrock.x},{positionrock.y},{positionrock.z}");    //ghi ten, vi tri x,y,z vao file
+                    Destroy(rock);
                 }
 
                 foreach (GameObject water in waterObject)
                 {
                     Vector3 positionwater = water.transform.position; // vi tri cac object rock
                     writer.WriteLine($"{4},{positionwater.x},{positionwater.y},{positionwater.z}");    //ghi ten, vi tri x,y,z vao file
+                    Destroy(water);
                 }
             }
         }
@@ -83,6 +87,7 @@ public class fileStorage : TankCreateMap
                 writer.Close();
             }
         }
+        
         
     }
 

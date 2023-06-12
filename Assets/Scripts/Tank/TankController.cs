@@ -49,7 +49,7 @@ public class TankController : intruct
     // Update is called once per frame
     private void Update()
     {
-        if (GameStatus.isGameRunning)
+        if (setUpMap.undying.isPlaying || GameStatus.isTankCreate)
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -84,7 +84,7 @@ public class TankController : intruct
                 animator.SetFloat("moveDown", 0);
             }
 
-            if (GameStatus.isGamePaused)
+            if (!GameStatus.isTankCreate)
             {
                 if (Input.GetKey(KeyCode.Space))
                 {
@@ -92,10 +92,6 @@ public class TankController : intruct
                 }
             }
         }
-        /*else
-        {
-            animator.enabled = false;
-        }*/
     }
 
     private void Move(Direction direction)
@@ -132,8 +128,9 @@ public class TankController : intruct
             if (_tank.Hp == 0)
             {
                 Destroy(gameObject);
-                intruct.GameStatus.isGameRunning = false;
+                //intruct.GameStatus.isGameRunning = false;
                 Summary.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
