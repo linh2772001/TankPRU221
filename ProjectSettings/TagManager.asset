@@ -19,6 +19,7 @@ TagManager:
   - Tree
   - Brick
   - Water
+  - Track
   layers:
   - Default
   - TransparentFX
