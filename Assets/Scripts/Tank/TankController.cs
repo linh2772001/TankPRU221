@@ -19,11 +19,13 @@ public class TankController : intruct
     private SpriteRenderer _renderer;
 
     public GameObject Summary;
-
+    public GameObject track;
     Animator animator;
 
     private void Start()
     {
+        track = GameObject.FindGameObjectWithTag("Track");
+
         animator = GetComponent<Animator>();
         _tank = new Tank
         {
@@ -53,6 +55,7 @@ public class TankController : intruct
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
+                track.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
                 Move(Direction.Left);
                 animator.SetFloat("moveLeft", 1);
                 animator.SetFloat("moveRight", 0);
@@ -61,6 +64,8 @@ public class TankController : intruct
             }
             else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
+                track.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
                 Move(Direction.Down);
                 animator.SetFloat("moveLeft", 0);
                 animator.SetFloat("moveRight", 0);
@@ -69,6 +74,7 @@ public class TankController : intruct
             }
             else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
+                track.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
                 Move(Direction.Right);
                 animator.SetFloat("moveLeft", 0);
                 animator.SetFloat("moveRight", 1);
@@ -77,6 +83,8 @@ public class TankController : intruct
             }
             else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
+                track.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
                 Move(Direction.Up);
                 animator.SetFloat("moveLeft", 0);
                 animator.SetFloat("moveRight", 0);
