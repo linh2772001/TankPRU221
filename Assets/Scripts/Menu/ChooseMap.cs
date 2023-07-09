@@ -22,7 +22,10 @@ public class ChooseMap : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
     }
-
+    public void chooseMap4()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
+    }
     public void backFromCreateMap()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
