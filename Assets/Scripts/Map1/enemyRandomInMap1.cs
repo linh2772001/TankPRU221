@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyRandomInMap1 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject enemy;
+    public GameObject enemy, tank, undyingAni;
     float countTime = 0, countTime1 = 0;
     int randomPosition, a = 1, quantity = 3;
     GameObject[] enemyCount;
@@ -16,10 +16,13 @@ public class enemyRandomInMap1 : MonoBehaviour
         public static bool isPlaying = true;
     }
 
-    public void RandomEnemy()
+    public void Start()
     {
+        tank = GameObject.FindGameObjectWithTag("Player");
+        tank.transform.position = new Vector3(1.6f, -4.6f, 0);
         //toc do game
         Time.timeScale = 1;
+        undyingAni.SetActive(true);
 
         Instantiate(enemy, new Vector3(-3.1f, 4.4f, 0), Quaternion.identity);
         Instantiate(enemy, new Vector3(-0.3f, 4.5f, 0), Quaternion.identity);
