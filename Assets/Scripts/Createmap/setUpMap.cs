@@ -22,7 +22,7 @@ public class setUpMap : MonoBehaviour
         tank = GameObject.FindGameObjectWithTag("Player");
 
         tank.transform.position = new Vector3(-1.28f, -4.16f, 0);
-
+        
         Time.timeScale = 1;
 
         UndyingAni.SetActive(true);
