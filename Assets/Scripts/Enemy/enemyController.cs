@@ -132,7 +132,10 @@ public class enemyController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Kiểm tra va chạm với tường
-        if (collision.gameObject.CompareTag("block") || collision.gameObject.CompareTag("rock") || collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("water"))
+        if (collision.gameObject.CompareTag("block") || collision.gameObject.CompareTag("rock") ||
+            collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("Enemy") ||
+            collision.gameObject.CompareTag("water") || collision.gameObject.CompareTag("WallSteel") ||
+            collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Water"))
         {
             changeDirection = true;
             timechangeDirection = 0f;

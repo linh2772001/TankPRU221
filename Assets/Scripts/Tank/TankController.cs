@@ -21,6 +21,7 @@ public class TankController : intruct
     public GameObject Summary;
     public GameObject track;
     Animator animator;
+    public GameObject health;
 
     private void Start()
     {
@@ -137,6 +138,7 @@ public class TankController : intruct
             {
                 Destroy(gameObject);
                 //intruct.GameStatus.isGameRunning = false;
+                health.SetActive(false);
                 Summary.SetActive(true);
                 Time.timeScale = 0;
             }
