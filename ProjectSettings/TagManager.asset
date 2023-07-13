@@ -20,6 +20,7 @@ TagManager:
   - Brick
   - Water
   - Track
+  - Play2
   layers:
   - Default
   - TransparentFX
