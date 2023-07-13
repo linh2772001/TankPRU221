@@ -14,7 +14,7 @@ public class shot : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-            coin.incrementSscore();
+           // coin.incrementSscore();
         }
         if (collision.gameObject.tag == "block")
         {
